@@ -153,6 +153,7 @@
 #define ESP_LED
 #define RTC_BACKUP
 #define LDR
+#define BUZZER
 #define IR_RECEIVER
 
 //#define ONOFF_BUTTON
