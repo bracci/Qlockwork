@@ -239,6 +239,9 @@ String codetab;
 
 struct rst_info *rtc_info;
 
+void (*gpio16SoftInterrupt)() = null;
+bool gpio16pressed = false;
+
 WiFiEventHandler wifiConnectHandler;
 WiFiEventHandler wifiDisconnectHandler;
 
@@ -300,7 +303,7 @@ void setup()
     Serial.println("Setting up Mode-Button.");
     if(PIN_MODE_BUTTON == 16){
       pinMode(PIN_MODE_BUTTON, INPUT_PULLDOWN_16);
-      attachInterrupt(digitalPinToInterrupt(PIN_MODE_BUTTON), buttonModeInterrupt, RISING);
+      gpio16SoftInterrupt = buttonModeInterrupt;
     } else {
       pinMode(PIN_MODE_BUTTON, INPUT_PULLUP);
       attachInterrupt(digitalPinToInterrupt(PIN_MODE_BUTTON), buttonModeInterrupt, FALLING);
@@ -904,6 +907,14 @@ void loop()
     //*************************************************************************
     // Run always
     //*************************************************************************
+  if(gpio16pressed && !digitalRead(16)) gpio16pressed = false;
+  if (gpio16SoftInterrupt != null){
+    if (digitalRead(16) && !gpio16pressed)
+    {
+      gpio16pressed = true;
+      gpio16SoftInterrupt();
+    }
+  }
 
   if (mode == MODE_WPS){
     if (startWps) {
@@ -1042,7 +1053,7 @@ void loop()
 
 #ifdef MODE_BUTTON
 #ifdef SHOW_MODE_SETTINGS
-  if (!digitalRead(PIN_MODE_BUTTON) && (millis() > (lastModePress + 2000)) && modeButtonStage < 1) {
+  if ((!digitalRead(PIN_MODE_BUTTON)^(PIN_MODE_BUTTON == 16)) && (millis() > (lastModePress + 2000)) && modeButtonStage < 1) {
     modeButtonStage = 1;
     if (mode < MODE_SET_1ST) {
       setMode(MODE_SET_1ST);
@@ -1051,7 +1062,7 @@ void loop()
     }
   }
 #endif
-  if (!digitalRead(PIN_MODE_BUTTON) && (millis() > (lastModePress + 5000)) && modeButtonStage < 2) {
+  if ((!digitalRead(PIN_MODE_BUTTON)^(PIN_MODE_BUTTON == 16)) && (millis() > (lastModePress + 5000)) && modeButtonStage < 2) {
     modeButtonStage = 2;
     setupWPS();
   }
