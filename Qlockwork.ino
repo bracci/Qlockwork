@@ -907,7 +907,10 @@ void loop()
     //*************************************************************************
     // Run always
     //*************************************************************************
-  if(gpio16pressed && !digitalRead(16)) gpio16pressed = false;
+  if(gpio16pressed && !digitalRead(16)){
+    gpio16pressed = false;
+    lastModePress = 0;
+  }
   if (gpio16SoftInterrupt != null){
     if (digitalRead(16) && !gpio16pressed)
     {
@@ -1053,7 +1056,7 @@ void loop()
 
 #ifdef MODE_BUTTON
 #ifdef SHOW_MODE_SETTINGS
-  if ((!digitalRead(PIN_MODE_BUTTON)^(PIN_MODE_BUTTON == 16)) && (millis() > (lastModePress + 2000)) && modeButtonStage < 1) {
+  if ((lastModePress != 0) && (!digitalRead(PIN_MODE_BUTTON)^(PIN_MODE_BUTTON == 16)) && (millis() > (lastModePress + 2000)) && modeButtonStage < 1) {
     modeButtonStage = 1;
     if (mode < MODE_SET_1ST) {
       setMode(MODE_SET_1ST);
@@ -1062,7 +1065,7 @@ void loop()
     }
   }
 #endif
-  if ((!digitalRead(PIN_MODE_BUTTON)^(PIN_MODE_BUTTON == 16)) && (millis() > (lastModePress + 5000)) && modeButtonStage < 2) {
+  if ((lastModePress != 0) && (!digitalRead(PIN_MODE_BUTTON)^(PIN_MODE_BUTTON == 16)) && (millis() > (lastModePress + 5000)) && modeButtonStage < 2) {
     modeButtonStage = 2;
     setupWPS();
   }
