@@ -65,6 +65,36 @@ Words.h
 #define CH_ZH_H_EUFI     matrix[8] |= 0b0000000111100000
 #define CH_ZH_H_ZWOEUFI    matrix[9] |= 0b1111110000000000
 
+// CH_ZH_2
+
+#define CH_ZH_2_VOR        matrix[2] |= 0b0000000011100000
+#define CH_ZH_2_AB       matrix[3] |= 0b1100000000000000
+#define CH_ZH_2_ESISCH_BM  0b1101111000000000
+#define CH_ZH_2_ESISCH     matrix[0] |=  CH_ZH_2_ESISCH_BM
+#define CH_ZH_2_ESISCH_R   matrix[0] &=  ~CH_ZH_2_ESISCH_BM
+#define CH_ZH_2_GSI        matrix[9] |= 0b0000000011100000
+#define CH_ZH_2_AM       matrix[9] |= 0b0000001100000000
+#define CH_ZH_2_PM       matrix[3] |= 0b0000000001100000
+
+#define CH_ZH_2_FUEF       matrix[1] |= 0b0000000111100000
+#define CH_ZH_2_ZAEAE      matrix[0] |= 0b0000000011100000
+#define CH_ZH_2_VIERTU     matrix[1] |= 0b1111111000000000
+#define CH_ZH_2_ZWAENZG      matrix[2] |= 0b1111110000000000
+#define CH_ZH_2_HAUBI      matrix[3] |= 0b0001111100000000
+
+#define CH_ZH_2_H_EIS      matrix[4] |= 0b1110000000000000
+#define CH_ZH_2_H_ZWOEI      matrix[4] |= 0b0001111000000000
+#define CH_ZH_2_H_DRUE     matrix[4] |= 0b0000000111100000
+#define CH_ZH_2_H_VIER     matrix[5] |= 0b1111100000000000
+#define CH_ZH_2_H_FUEFI      matrix[5] |= 0b0000011111000000
+#define CH_ZH_2_H_SAECHSI    matrix[6] |= 0b1111110000000000
+#define CH_ZH_2_H_SIEBNI     matrix[7] |= 0b1111110000000000
+#define CH_ZH_2_H_ACHTI      matrix[7] |= 0b0000001111100000
+#define CH_ZH_2_H_NUENI      matrix[6] |= 0b0000001111100000
+#define CH_ZH_2_H_ZAENI      matrix[8] |= 0b1111100000000000
+#define CH_ZH_2_H_EUFI     matrix[8] |= 0b0000001111000000
+#define CH_ZH_2_H_ZWOEUFI    matrix[9] |= 0b1111110000000000
+
 // CH_AG
 
 #define CH_AG_VOR        matrix[2] |= 0b0000000011100000
@@ -124,6 +154,94 @@ Words.h
 #define CH_GR_H_ZAENI      matrix[8] |= 0b0000001111100000
 #define CH_GR_H_EUFI     matrix[4] |= 0b0011110000000000
 #define CH_GR_H_ZWOEUFI    matrix[8] |= 0b1111110000000000
+
+// CH_GR_2
+
+#define CH_GR_2_VOR        matrix[2] |= 0b0000000011100000
+#define CH_GR_2_AB       matrix[3] |= 0b0110000000000000
+#define CH_GR_2_ESISCH_BM  0b1101111000000000
+#define CH_GR_2_ESISCH     matrix[0] |=  CH_GR_2_ESISCH_BM
+#define CH_GR_2_ESISCH_R   matrix[0] &=  ~CH_GR_2_ESISCH_BM
+#define CH_GR_2_GSI        matrix[9] |= 0b0000000011100000
+
+#define CH_GR_2_FUEF       matrix[0] |= 0b0000000011100000
+#define CH_GR_2_ZAEAE      matrix[1] |= 0b0000000111100000
+#define CH_GR_2_VIERTU     matrix[1] |= 0b1111111000000000
+#define CH_GR_2_ZWAENZG    matrix[2] |= 0b1111111000000000
+#define CH_GR_2_HAUBI      matrix[3] |= 0b0000011111000000
+
+#define CH_GR_2_H_EIS      matrix[4] |= 0b1110000000000000
+#define CH_GR_2_H_ZWOEI      matrix[4] |= 0b0001111000000000
+#define CH_GR_2_H_DRUE     matrix[4] |= 0b0000000111100000
+#define CH_GR_2_H_VIER     matrix[5] |= 0b0000001111000000
+#define CH_GR_2_H_FUEFI      matrix[5] |= 0b0111000000000000
+#define CH_GR_2_H_SAECHSI    matrix[6] |= 0b0000011111000000
+#define CH_GR_2_H_SIEBNI     matrix[6] |= 0b1111000000000000
+#define CH_GR_2_H_ACHTI      matrix[7] |= 0b0111100000000000
+#define CH_GR_2_H_NUENI      matrix[7] |= 0b0000001110000000
+#define CH_GR_2_H_ZAENI      matrix[8] |= 0b1111000000000000
+#define CH_GR_2_H_EUFI     matrix[8] |= 0b0000001110000000
+#define CH_GR_2_H_ZWOEUFI    matrix[9] |= 0b0111110000000000
+
+// CH_VS
+
+#define CH_VS_VOR        matrix[2] |= 0b0000000011100000
+#define CH_VS_AB       matrix[3] |= 0b0110000000000000
+#define CH_VS_ESISCH_BM  0b1101111000000000
+#define CH_VS_ESISCH     matrix[0] |=  CH_VS_ESISCH_BM
+#define CH_VS_ESISCH_R   matrix[0] &=  ~CH_VS_ESISCH_BM
+#define CH_VS_GSI        matrix[9] |= 0b0000000011100000
+#define CH_VS_AM       matrix[0] |= 0b1000000000000000
+#define CH_VS_PM       matrix[0] |= 0b0100000000000000
+
+#define CH_VS_FUEF       matrix[1] |= 0b0000000111100000
+#define CH_VS_ZAEAE      matrix[0] |= 0b0000000011100000
+#define CH_VS_VIERTU     matrix[1] |= 0b1111111000000000
+#define CH_VS_ZWAENZG      matrix[2] |= 0b1111110000000000
+#define CH_VS_HAUBI      matrix[3] |= 0b0000011111000000
+
+#define CH_VS_H_EIS      matrix[4] |= 0b1110000000000000
+#define CH_VS_H_ZWOEI      matrix[4] |= 0b0001111000000000
+#define CH_VS_H_DRUE     matrix[4] |= 0b0000000011100000
+#define CH_VS_H_VIER     matrix[5] |= 0b0000111110000000
+#define CH_VS_H_FUEFI      matrix[5] |= 0b1111000000000000
+#define CH_VS_H_SAECHSI    matrix[7] |= 0b0000111111100000
+#define CH_VS_H_SIEBNI     matrix[6] |= 0b1111100000000000
+#define CH_VS_H_ACHTI      matrix[6] |= 0b0000011111000000
+#define CH_VS_H_NUENI      matrix[7] |= 0b1111000000000000
+#define CH_VS_H_ZAENI      matrix[8] |= 0b1111100000000000
+#define CH_VS_H_EUFI     matrix[8] |= 0b0000001111000000
+#define CH_VS_H_ZWOEUFI    matrix[9] |= 0b1111110000000000
+
+// CH_BS
+
+#define CH_BS_VOR        matrix[2] |= 0b0000000011100000
+#define CH_BS_AB       matrix[3] |= 0b0110000000000000
+#define CH_BS_ESISCH_BM  0b1101111000000000
+#define CH_BS_ESISCH     matrix[0] |=  CH_BS_ESISCH_BM
+#define CH_BS_ESISCH_R   matrix[0] &=  ~CH_BS_ESISCH_BM
+#define CH_BS_GSI        matrix[9] |= 0b0000000011100000
+#define CH_BS_AM       matrix[0] |= 0b1000000000000000
+#define CH_BS_PM       matrix[0] |= 0b0100000000000000
+
+#define CH_BS_FUEF       matrix[1] |= 0b0000000111100000
+#define CH_BS_ZAEAE      matrix[0] |= 0b0000000011100000
+#define CH_BS_VIERTU     matrix[1] |= 0b1111111000000000
+#define CH_BS_ZWAENZG      matrix[2] |= 0b1111111000000000
+#define CH_BS_HAUBI      matrix[3] |= 0b0000011111000000
+
+#define CH_BS_H_EIS      matrix[4] |= 0b1110000000000000
+#define CH_BS_H_ZWOEI      matrix[4] |= 0b0001111000000000
+#define CH_BS_H_DRUE     matrix[4] |= 0b0000000111100000
+#define CH_BS_H_VIER     matrix[5] |= 0b0000001111100000
+#define CH_BS_H_FUEFI      matrix[5] |= 0b0111110000000000
+#define CH_BS_H_SAECHSI    matrix[6] |= 0b0000011111000000
+#define CH_BS_H_SIEBNI     matrix[6] |= 0b1111100000000000
+#define CH_BS_H_ACHTI      matrix[7] |= 0b0111110000000000
+#define CH_BS_H_NUENI      matrix[7] |= 0b0000001111100000
+#define CH_BS_H_ZAENI      matrix[8] |= 0b1111100000000000
+#define CH_BS_H_EUFI     matrix[8] |= 0b0000001111000000
+#define CH_BS_H_ZWOEUFI    matrix[9] |= 0b1111110000000000
 
 //D3
 

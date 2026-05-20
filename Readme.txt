@@ -548,6 +548,9 @@ mode=0                              Set clock to mode=0 (time), mode=1 (am/pm), 
 ******************************************************************************
 Changelog:
 ******************************************************************************
+20260519:
+Introduced new swiss german dialects "ZH 2", "GR 2", "VS", "BS".
+
 20240227:
 Reverted special cases for HW v1.2. Made a separate branch (V1_2wButtons) for HW v1.2 which uses buttons.
 
